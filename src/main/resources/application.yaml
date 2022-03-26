@@ -12,7 +12,7 @@ spring:
     password: # Redis服务器连接密码（默认为空）
     timeout: 3000ms # 连接超时时间（毫秒）
 mybatis-plus:
-  #  mapper-locations: classpath:/mapper/**/*.xml
+  mapper-locations: classpath:/mapper/**/*xml
   global-config:
     db-config:
       id-type: auto
@@ -20,3 +20,13 @@ mybatis-plus:
     auto-mapping-behavior: partial
     map-underscore-to-camel-case: true
 
+# jwt配置
+jwt:
+  # 请求头
+  tokenHeader: Authorization
+  # 签名加盐
+  secret: iwqjhda8232bjgh432
+  #JWT过期时间(60*60*24*7) 半个小时 7天
+  expiration: 604800
+  # token头部
+  tokenHead: 'Bearer'
